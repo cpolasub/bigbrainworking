@@ -2,8 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&display=swap');
 
 /* ---------- FONT CLASSES ---------- */
-
-/* Title font (Grenze Gotisch) */
 .title-font {
   font-family: "Grenze Gotisch", serif;
   font-optical-sizing: auto;
@@ -11,7 +9,6 @@
   font-style: normal;
 }
 
-/* Body font (Libre Baskerville) */
 .body-font {
   font-family: "Libre Baskerville", serif;
   font-optical-sizing: auto;
@@ -19,24 +16,63 @@
   font-style: normal;
 }
 
-/* ---------- GENERAL PAGE STYLE ---------- */
+/* ---------- GLOBAL PAGE STYLING ---------- */
 
 body {
   margin: 0;
   padding: 20px;
-  background: #fafafa;
+
+  /* Your background image */
+  background-image: url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* Makes text easier to read on parchment */
+  color: #2a1f0d;
 }
 
+/* Remove link underline + keep color */
 a {
   text-decoration: none;
-  color: black;
+  color: inherit;
 }
 
-button {
+/* ---------- MAIN BUTTONS (Medieval style) ---------- */
+
+.big-button {
+  padding: 35px 55px;
+  font-size: 2.2rem;
+  border-radius: 12px;
+
+  /* Medieval carved look */
+  background: rgba(255, 250, 240, 0.85);  /* parchment-like */
+  border: 3px solid #4a3820;              /* deep brown ink */
+  box-shadow:
+    0 4px 0 #2c1e0c,                     /* bottom edge */
+    0 8px 20px rgba(0, 0, 0, 0.35);       /* glow */
+  
+  transition: 0.2s ease;
   cursor: pointer;
 }
 
-/* ---------- HOME PAGE BUTTONS ---------- */
+.big-button:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 6px 0 #2c1e0c,
+    0 10px 25px rgba(0, 0, 0, 0.45);
+  background: rgba(255, 250, 240, 0.95);
+}
+
+.big-button:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 3px 0 #2c1e0c,
+    0 5px 12px rgba(0, 0, 0, 0.35);
+}
+
+/* ---------- HOME PAGE LAYOUT ---------- */
 
 .center-container {
   height: 70vh;
@@ -46,37 +82,25 @@ button {
   gap: 40px;
 }
 
-.big-button {
-  padding: 40px 60px;
-  font-size: 2rem;
-  border-radius: 12px;
-  border: 2px solid black;
-  background: white;
-  transition: 0.2s ease;
-}
-
-.big-button:hover {
-  transform: scale(1.05);
-  background: #f2f2f2;
-}
-
-/* ---------- BREADCRUMB NAV ---------- */
+/* ---------- BREADCRUMB NAVIGATION ---------- */
 
 .breadcrumb {
   display: flex;
-  gap: 10px;
+  gap: 12px;
   margin-bottom: 20px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 
-.breadcrumb a {
-  padding: 4px 8px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  background: white;
+.breadcrumb a,
+.breadcrumb span {
+  padding: 6px 12px;
+  border-radius: 8px;
+
+  background: rgba(255, 250, 240, 0.8);  /* parchment bubble */
+  border: 2px solid #4a3820;
+  box-shadow: 0 3px 0 #2c1e0c;
 }
 
 .breadcrumb span {
-  padding: 4px 8px;
   font-weight: bold;
 }
